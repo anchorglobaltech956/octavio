@@ -198,9 +198,9 @@
     .network { position: relative; overflow: hidden; background: var(--paper); }
     .network:before { content: ""; position: absolute; inset: 0 0 auto; height: 720px; background: linear-gradient(180deg,rgba(255,254,251,.55),rgba(255,254,251,.93) 82%,#fffefb), url("./assets/three-roots-plant-aerial.webp") center 43% / cover no-repeat; opacity: .62; }
     .network > .container { position: relative; z-index: 1; }
-    .sales-contact-card { display: grid; grid-template-columns: minmax(0,1.35fr) minmax(280px,.65fr); margin-bottom: 26px; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: #fff; box-shadow: 0 20px 55px rgba(20,61,43,.08); }
-    .sales-card-visual { min-height: 280px; background: var(--cream); }
-    .sales-card-visual img { display: block; width: 100%; height: 100%; aspect-ratio: 1688 / 919; object-fit: cover; }
+    .sales-contact-card { display: grid; grid-template-columns: minmax(260px,.72fr) minmax(320px,1.28fr); align-items: center; gap: clamp(24px,4vw,48px); margin-bottom: 26px; padding: clamp(22px,4vw,42px); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: #fff; box-shadow: 0 20px 55px rgba(20,61,43,.08); }
+    .sales-card-visual { width: 100%; max-width: 430px; margin: 0 auto; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: var(--cream); box-shadow: 0 14px 34px rgba(20,61,43,.1); }
+    .sales-card-visual img { display: block; width: 100%; height: auto; aspect-ratio: 1688 / 919; object-fit: contain; }
     .sales-card-copy { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: clamp(26px,4vw,44px); }
     .sales-card-copy h3 { margin: 7px 0 12px; color: var(--forest); font-size: clamp(1.8rem,3vw,2.5rem); }
     .sales-card-copy p { margin: 0 0 20px; color: var(--muted); }
@@ -309,16 +309,6 @@
     .developer-credit { flex: 1 0 100%; margin: 2px 0 0; border-top: 1px solid var(--line); padding-top: 18px; text-align: center; color: var(--muted); font-size: .72rem; }
     .developer-credit a { color: var(--forest); font-weight: 800; }
     .mobile-cta { display: none; }
-    dialog { width: min(520px, calc(100% - 28px)); border: 0; border-radius: 22px; padding: 0; box-shadow: 0 30px 100px rgba(0,0,0,.35); }
-    dialog::backdrop { background: rgba(6,23,15,.72); backdrop-filter: blur(5px); }
-    .modal-head { display: flex; justify-content: space-between; align-items: center; padding: 22px 24px; color: #fff; background: var(--forest); }
-    .modal-head h3 { font-size: 1.7rem; }
-    .close { width: 38px; height: 38px; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; color: #fff; background: transparent; cursor: pointer; font-size: 1.3rem; }
-    .modal-body { padding: 24px; }
-    .contact-methods { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
-    .contact-method { border: 1px solid var(--line); border-radius: 14px; padding: 13px; background: #faf8ef; text-align: center; }
-    .contact-method b { display: block; color: var(--forest); }
-    .contact-method small { color: var(--muted); }
     .fineprint { color: var(--muted); font-size: .72rem; }
     @media (max-width: 920px) {
       .nav-links > a, .nav-cta { display: none; }
@@ -372,7 +362,6 @@
       footer { padding-bottom: 104px; }
       .mobile-cta { position: fixed; z-index: 50; left: 0; right: 0; bottom: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 9px 12px calc(9px + env(safe-area-inset-bottom)); background: rgba(255,253,247,.97); box-shadow: 0 -8px 30px rgba(12,42,29,.13); backdrop-filter: blur(12px); }
       .mobile-cta .btn { min-height: 44px; padding: 10px 12px; font-size: .8rem; }
-      .contact-methods { grid-template-columns: 1fr; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *:before, *:after { animation: none !important; transition: none !important; } }
 
@@ -498,7 +487,7 @@
           <button type="button" class="active" data-lang="en" aria-pressed="true">EN</button>
           <button type="button" data-lang="es" aria-pressed="false">ES</button>
         </div>
-        <button class="btn btn-primary nav-cta js-contact" type="button" data-en="Call / WhatsApp" data-es="Llamar / WhatsApp">Call / WhatsApp</button>
+        <a class="btn btn-primary nav-cta" href="#sales-contact" data-en="Call / WhatsApp" data-es="Llamar / WhatsApp">Call / WhatsApp</a>
       </nav>
       <div class="lang-toggle mobile-lang" aria-label="Language on mobile">
         <button type="button" class="active" data-lang="en" aria-pressed="true">EN</button>
@@ -645,7 +634,7 @@
           <div><div class="eyebrow" data-en="Texas launch network" data-es="Red de lanzamiento en Texas">Texas launch network</div><h2 data-en="Grow from Weslaco, route by route." data-es="Crecer desde Weslaco, ruta por ruta.">Grow from Weslaco, route by route.</h2></div>
           <p data-en="Explore launch regions, then raise your hand as a feed store, farm supplier, breeder, or buyer. No unsupported dealer locations are shown." data-es="Explore las regiones de lanzamiento y regístrese como tienda, proveedor, criador o comprador. No se muestran distribuidores sin confirmar.">Explore launch regions, then raise your hand as a feed store, farm supplier, breeder, or buyer. No unsupported dealer locations are shown.</p>
         </div>
-        <article class="sales-contact-card" aria-labelledby="salesContactTitle">
+        <article class="sales-contact-card" id="sales-contact" aria-labelledby="salesContactTitle">
           <div class="sales-card-visual"><img src="./assets/sales-business-card-clean.webp" alt="Three Roots Animal Nutrition sales business card with feed blend and brand logo"></div>
           <div class="sales-card-copy">
             <div class="eyebrow" data-en="Sales contact" data-es="Contacto de ventas">Sales contact</div>
@@ -846,19 +835,6 @@
     <a class="btn btn-outline" href="shop.html" data-en="Order Online" data-es="Ordenar en línea">Order Online</a>
   </div>
 
-  <dialog id="contactDialog">
-    <div class="modal-head"><h3 data-en="Contact Three Roots" data-es="Contactar a Three Roots">Contact Three Roots</h3><button class="close" type="button" aria-label="Close">×</button></div>
-    <div class="modal-body">
-      <div class="contact-methods">
-        <div class="contact-method"><b data-en="Primary phone" data-es="Teléfono principal">Primary phone</b><small><a href="tel:+19565208606">956-520-8606</a></small></div>
-        <div class="contact-method"><b data-en="Alternate phone" data-es="Teléfono alterno">Alternate phone</b><small><a href="tel:+19562796207">956-279-6207</a></small></div>
-      </div>
-      <p><strong>Octavio Garcia</strong><br><a href="mailto:tavo@threeroots.net">tavo@threeroots.net</a><br><a href="mailto:tavo@garballc.com">tavo@garballc.com</a><br>1702 S. International Blvd., Weslaco, TX 78596</p>
-      <button class="btn btn-primary js-open-call-form" id="openCallForm" type="button" data-en="Open request form" data-es="Abrir formulario">Open request form</button>
-      <p class="fineprint" data-en="No data leaves this private demo. Test submissions are stored only in this browser." data-es="Ningún dato sale de esta demo privada. Los envíos de prueba se guardan solo en este navegador.">No data leaves this private demo. Test submissions are stored only in this browser.</p>
-    </div>
-  </dialog>
-
   <script>
     const state = { lang: localStorage.getItem('threeRootsLang') || 'en', goal: 'condition', stage: 'adult', productKey: 'supreme', product: 'Supreme Rooster Mix', cityKey: 'weslaco' };
     const products = {
@@ -986,11 +962,6 @@
     });
     document.querySelectorAll('[data-mileage-city]').forEach(row => row.addEventListener('click', () => { updateCity(row.dataset.mileageCity); track('city_interest', row.dataset.mileageCity); }));
     document.querySelectorAll('.lead-tab').forEach(btn => btn.addEventListener('click', () => { document.querySelectorAll('.lead-tab').forEach(x => x.classList.remove('active')); btn.classList.add('active'); document.querySelectorAll('.form-panel').forEach(p => p.hidden = p.id !== btn.dataset.panel); }));
-    const dialog = document.getElementById('contactDialog');
-    document.querySelectorAll('.js-contact').forEach(btn => btn.addEventListener('click', () => { dialog.showModal(); track('contact_open', 'primary'); }));
-    document.querySelector('.close').addEventListener('click', () => dialog.close());
-    dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
-    document.querySelectorAll('.js-open-call-form').forEach(btn => btn.addEventListener('click', () => { if (dialog.open) dialog.close(); document.querySelector('[data-panel="callForm"]').click(); document.getElementById('retailers').scrollIntoView({behavior:'smooth'}); setTimeout(() => document.getElementById('callName').focus(), 500); }));
     document.querySelectorAll('.js-product-lead').forEach(btn => btn.addEventListener('click', () => { document.querySelector('[data-panel="callForm"]').click(); document.getElementById('interest').value = state.lang === 'en' ? `I am interested in ${state.product}.` : `Me interesa ${state.product}.`; document.getElementById('retailers').scrollIntoView({behavior:'smooth'}); track('product_lead', state.product); }));
     function track(type, value) { const events = JSON.parse(localStorage.getItem('threeRootsPrototypeEvents') || '[]'); events.push({type, value, at: new Date().toISOString()}); localStorage.setItem('threeRootsPrototypeEvents', JSON.stringify(events.slice(-50))); }
     document.querySelectorAll('.demo-form').forEach(form => form.addEventListener('submit', e => { e.preventDefault(); if (!form.reportValidity()) return; const submissions = JSON.parse(localStorage.getItem('threeRootsDemoLeads') || '[]'); submissions.push({form: form.id, data: Object.fromEntries(new FormData(form)), product: state.product, at: new Date().toISOString()}); localStorage.setItem('threeRootsDemoLeads', JSON.stringify(submissions.slice(-20))); form.querySelector('.form-status').textContent = state.lang === 'en' ? '✓ Demo captured in this browser. Connect HubSpot or email before launch.' : '✓ Demo guardado en este navegador. Conecte HubSpot o correo antes del lanzamiento.'; track('form_submit', form.id); form.reset(); }));

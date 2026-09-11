@@ -1,0 +1,33 @@
+THREE ROOTS ANIMAL NUTRITION — GITHUB PAGES PUBLICATION
+
+PACKAGE CONTENTS
+- index.html: corrected bilingual landing page
+- shop.html: online-order presentation
+- checkout.html: Stripe card and ACH layout presentation
+- order-confirmation.html: sample confirmation
+- store.css and store.js: store appearance and interaction
+- assets/: all 17 required photographs and the logo
+- .nojekyll: tells GitHub to serve the static files directly
+
+UPLOAD STEPS
+1. Download and EXTRACT this ZIP on your computer.
+2. Open the correct GitHub repository.
+3. Select Add file > Upload files.
+4. Upload every extracted item, including the complete assets folder.
+5. Confirm index.html and assets are at the repository's top level.
+6. Commit the upload to the main branch.
+7. Open Settings > Pages.
+8. Under Build and deployment, select Deploy from a branch.
+9. Select main and /(root), then Save.
+10. Wait for GitHub to display the website address. Open it and press Ctrl+F5.
+
+DO NOT upload the ZIP as a single repository file. GitHub does not extract it.
+DO NOT upload index.html by itself. The photographs are inside assets/.
+
+PUBLICATION SAFETY
+- Enabling GitHub Pages creates a publicly accessible website address.
+- The pages currently contain noindex,nofollow while Three Roots reviews the site.
+- Change the robots tag to index,follow only after final public-launch approval.
+- Store prices are presentation samples pending owner approval.
+- Card and ACH pages are demonstrations and cannot process a real payment.
+- Never add Stripe secret keys to HTML or JavaScript files.
